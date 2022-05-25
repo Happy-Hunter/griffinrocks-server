@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rocks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rocks.each do |rock| %>
+      <tr>
+        <td><%= rock.image %></td>
+        <td><%= link_to 'Show', rock %></td>
+        <td><%= link_to 'Edit', edit_rock_path(rock) %></td>
+        <td><%= link_to 'Destroy', rock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rock', new_rock_path %>
